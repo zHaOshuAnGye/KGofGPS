@@ -27,3 +27,12 @@ http://www.zdoubleleaves.cn/paper/Understanding%20People%20Lifestyles%EF%BC%9ACo
 | 时间分布.PNG                  | 展示了所有周小时hour_in_week在数据中的分布                   |
 | trajectory.csv                | 处理好的轨迹数据。字段有：id,time,longitude,latitude,grid_num,weekday,hour,hour_in_week,tj_id，其中id是车辆的编号，time是轨迹的时间，grid_num表示该点属于的网格号，weekday是根据time衍生出的判断星期的字段（周六为0，周日为1，周一为2，周二为3……），hour是截取了time中的小时数，hour_in_week表示转换之后的周小时（hour_in_week = hour+weekday*24），tj_id代表改点所属于的轨迹编号 |
 
+### 知识图谱可视化
+对于已经有的知识图谱关系T，按照论文4.4进行可视化处理
+| 文件名                         | 说明                                                        |
+| :---------------------------- | ------------------------------------------------------------ |
+| filterT.py                    | 读取T.csv文件（就是上面的T.txt）并选择关系密切的地点对并打印      |
+| trans.py                      | 将标准经纬度坐标转化为百度地图坐标                               |
+| T.html                        | 仿照4.4可视化内容的结果，将关系紧密的地区在百度地图上标出          |
+由于T尚未经过3.3中方法的分解，地区关系看起来有些杂乱，但是有部分地区关系，比如机场高速通道一带已经很明显了，与论文中图4(c)一致。
+后续得到T子矩阵后关系应该会更加明显。
