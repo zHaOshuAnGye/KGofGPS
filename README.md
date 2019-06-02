@@ -1,15 +1,15 @@
 # KGofGPS
-复现论文**UnderstandingPeopleLifestyles: ConstructionofUrbanMovementKnowledge GraphfromGPSTrajectory**的内容
-*论文链接：*
+​	复现论文**UnderstandingPeopleLifestyles: ConstructionofUrbanMovementKnowledge GraphfromGPSTrajectory**的内容。
+**论文链接：**
 http://www.zdoubleleaves.cn/paper/Understanding%20People%20Lifestyles%EF%BC%9AConstruction%20of%20Urban%20Movement%20Knowledge%20Graph%20from%20GPS%20Trajectory.pdf
 ## KnowledgeGraphConstruction
-论文第3节的内容，工作分为以下几个部分
+​	论文第3节的内容，工作分为以下几个部分
 ### 数据预处理
 
 ### 生成矩阵T和矩阵S
-生成S矩阵，选择三个热门地点进行可视化。
-![https://github.com/zHaOshuAnGye/KGofGPS/blob/master/%E7%94%9F%E6%88%90T%E7%9F%A9%E9%98%B5%E5%92%8CS%E7%9F%A9%E9%98%B5/%E7%83%AD%E9%97%A8%E5%9C%B0%E7%82%B9%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0%E5%91%A8%E6%9C%AB.PNG]
-计算地点之间的马尔可夫一步转移概率矩阵，矩阵规格是2500*2500
+​	生成S矩阵，选择三个热门地点进行可视化。
+![热门地点访问频率](https://github.com/zHaOshuAnGye/KGofGPS/blob/master/%E7%94%9F%E6%88%90T%E7%9F%A9%E9%98%B5%E5%92%8CS%E7%9F%A9%E9%98%B5/%E7%83%AD%E9%97%A8%E5%9C%B0%E7%82%B9%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0%E5%91%A8%E6%9C%AB.PNG)
+	计算地点之间的马尔可夫一步转移概率矩阵T，T矩阵规格是2500*2500
 
 | 文件名                        | 说明                                                         |
 | :---------------------------- | ------------------------------------------------------------ |
