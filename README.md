@@ -1,4 +1,4 @@
-# KGofGPS
+﻿# KGofGPS
 ​	复现论文**UnderstandingPeopleLifestyles: ConstructionofUrbanMovementKnowledge GraphfromGPSTrajectory**的内容。
 
 **论文链接：**
@@ -26,6 +26,15 @@ http://www.zdoubleleaves.cn/paper/Understanding%20People%20Lifestyles%EF%BC%9ACo
 | 热门地点访问次数整周/周末.PNG | 论文3.1节右上角的图                                          |
 | 时间分布.PNG                  | 展示了所有周小时hour_in_week在数据中的分布                   |
 | trajectory.csv                | 处理好的轨迹数据。字段有：id,time,longitude,latitude,grid_num,weekday,hour,hour_in_week,tj_id，其中id是车辆的编号，time是轨迹的时间，grid_num表示该点属于的网格号，weekday是根据time衍生出的判断星期的字段（周六为0，周日为1，周一为2，周二为3……），hour是截取了time中的小时数，hour_in_week表示转换之后的周小时（hour_in_week = hour+weekday*24），tj_id代表改点所属于的轨迹编号 |
+
+### 生成矩阵Vt和矩阵Vs
+利用非负矩阵分解生成Vt和Vs
+| 文件名                         | 说明                                                        |
+| :---------------------------- | ------------------------------------------------------------ |
+| NMF.py                    | 使用非负矩阵分解对S、T进行分解              |
+| RSVD.py                    | 使用正则化SVD矩阵分解对T进行分解              |
+
+
 
 ### 知识图谱可视化
 对于已经有的知识图谱关系T，按照论文4.4进行可视化处理
