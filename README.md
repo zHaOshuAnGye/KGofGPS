@@ -29,8 +29,9 @@ http://www.zdoubleleaves.cn/paper/Understanding%20People%20Lifestyles%EF%BC%9ACo
 
 ### 生成矩阵Vt和矩阵Vs
 利用非负矩阵分解生成Vt和Vs
+
 | 文件名  | 说明                             |
-| ------- | -------------------------------- |
+| :------- | -------------------------------- |
 | NMF.py  | 使用非负矩阵分解对S、T进行分解   |
 | RSVD.py | 使用正则化SVD矩阵分解对T进行分解 |
 
