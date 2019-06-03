@@ -11,14 +11,11 @@ while line:
     line = f.readline()
 f.close()
 X = np.array(data_list)
-#print (X[771])
 
 #进行非负矩阵分解
-model = NMF(n_components=20, alpha=0.01)
-Vs = model.fit_transform(X)
-MVsT = model.components_
+model = NMF(n_components=20, alpha=0.01, l1_ratio=0)
+Vt = model.fit_transform(X)
+E = model.components_
 
-
-print(Vs[771])
-np.savetxt("Vs.csv",Vs,delimiter=",")
-np.savetxt("MVsT.txt",MVsT,delimiter=",")
+np.savetxt("Vt.csv",Vt,fmt="%e",delimiter=",")
+np.savetxt("E.csv",E,fmt="%e",delimiter=",")
