@@ -29,3 +29,9 @@ if __name__ == '__main__':
         print(i)
         recall.append(calculate("absX/Xt_" + str(i) + ".csv"))
     pd.DataFrame(recall).to_csv("recall_Xt.csv", index=False)
+
+    recall = []
+    for i in range(1, 101):
+        print(i)
+        recall.append(calculate("absX/Xs_" + str(i) + ".csv"))
+    pd.DataFrame(recall).to_csv("recall_Xs.csv", index=False)
