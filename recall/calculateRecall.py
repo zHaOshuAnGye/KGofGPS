@@ -53,7 +53,6 @@ def cal():
 def drawGraph():
     Rs = np.array(pd.read_csv("recall_Xs.csv", header=None))
     Rt = np.array(pd.read_csv("recall_Xt.csv", header=None))
-    real = calculate("x_train.csv")
     plt.figure(num=1)
     for i in range(1, 10):
         plt.plot(Rs[0] + 1, Rs[i], label="Xs_" + str(i))
