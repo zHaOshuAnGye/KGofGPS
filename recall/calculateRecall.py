@@ -65,19 +65,26 @@ def drawGraph():
         plt.plot(Rt[0] + 1, Rt[i], label="Xt_" + str(i))
     plt.legend()
     plt.title("Recall_Xt")
+
+    plt.figure(num=3)
+    for i in range(1, 4):
+        plt.plot(Rs[0] + 1, Rs[i], label="Xs_" + str(i))
+        plt.plot(Rt[0] + 1, Rt[i], label="Xt_" + str(i))
+    plt.legend()
+    plt.title("Xs-Xt")
     plt.show()  # 显示图片
 
 
 def gen_train_eval(X, ratio):
     user_num, grid_num, all_num = 100, 2500, 49961
     x_train, x_eval = np.zeros((user_num, grid_num)), np.array(X)
-    train_num, index, step, all_train_num = 0, 0, int((0.011+ratio)*grid_num), int(ratio*all_num)
-    while train_num<all_train_num:
-        row, col = index//grid_num, index%grid_num
-        if X.loc[row, '{}'.format(col+1)]!=0 and x_train[row][col]==0:
-            x_train[row][col] = X.loc[row, '{}'.format(col+1)]
+    train_num, index, step, all_train_num = 0, 0, int((0.011 + ratio) * grid_num), int(ratio * all_num)
+    while train_num < all_train_num:
+        row, col = index // grid_num, index % grid_num
+        if X.loc[row, '{}'.format(col + 1)] != 0 and x_train[row][col] == 0:
+            x_train[row][col] = X.loc[row, '{}'.format(col + 1)]
             train_num += 1
-        index = (step+index)%(grid_num*user_num)
+        index = (step + index) % (grid_num * user_num)
     x_eval -= x_train
     x_train, x_eval = pd.DataFrame(x_train), pd.DataFrame(x_eval)
     x_train.columns, x_eval.columns = X.columns, X.columns
@@ -85,11 +92,11 @@ def gen_train_eval(X, ratio):
 
 
 if __name__ == '__main__':
-    data = pd.read_csv('user_query_data.csv')
-    X = genX(data)
-    x_train, x_eval = gen_train_eval(X=X, ratio=0.3)
-    pd.DataFrame(X).to_csv("X.csv", index=False)
-    pd.DataFrame(x_train).to_csv("x_train.csv", index=False)
-    pd.DataFrame(x_eval).to_csv("x_eval.csv", index=False)
+    # data = pd.read_csv('user_query_data.csv')
+    # X = genX(data)
+    # x_train, x_eval = gen_train_eval(X=X, ratio=0.3)
+    # pd.DataFrame(X).to_csv("X.csv", index=False)
+    # pd.DataFrame(x_train).to_csv("x_train.csv", index=False)
+    # pd.DataFrame(x_eval).to_csv("x_eval.csv", index=False)
 
     drawGraph()
