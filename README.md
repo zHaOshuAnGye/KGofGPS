@@ -14,9 +14,6 @@ http://www.zdoubleleaves.cn/paper/Understanding%20People%20Lifestyles%EF%BC%9ACo
 
 计算地点之间的马尔可夫一步转移概率矩阵T，T矩阵规格是2500*2500。
 
-对于T矩阵进行可视化
-
-![T矩阵可视化](https://github.com/zHaOshuAnGye/KGofGPS/blob/master/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%8F%AF%E8%A7%86%E5%8C%96/%E6%8D%95%E8%8E%B7.PNG)
 
 | 文件名                        | 说明                                                         |
 | :---------------------------- | ------------------------------------------------------------ |
@@ -53,3 +50,7 @@ http://www.zdoubleleaves.cn/paper/Understanding%20People%20Lifestyles%EF%BC%9ACo
 
 由于T尚未经过3.3中方法的分解，地区关系看起来有些杂乱，但是有部分地区关系，比如机场高速通道一带已经很明显了，与论文中图4(c)一致。
 后续得到T子矩阵后关系应该会更加明显。
+
+对于T矩阵进行可视化
+
+![T矩阵可视化](https://github.com/zHaOshuAnGye/KGofGPS/blob/master/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%8F%AF%E8%A7%86%E5%8C%96/%E6%8D%95%E8%8E%B7.PNG)
