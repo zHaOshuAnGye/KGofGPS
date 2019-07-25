@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hello, World</title>
+    <style type="text/css">
+        html{height:100%}
+        body{height:100%;margin:0px;padding:0px}
+        #container{height:100%}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=o1IqGqP5IvLCoD7crFLHZBgLK1dZAzpc">
+        //v3.0版本的引用方式：src="http://api.map.baidu.com/api?v=3.0&ak=您的密钥"
+    </script>n
+</head>
+
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+
+    var map = new BMap.Map("container");
+    // 创建地图实例
+    var point = new BMap.Point(116.404, 39.915);
+    // 创建点坐标
+    map.enableScrollWheelZoom(true);
+    map.centerAndZoom(point, 15);
+    // 初始化地图，设置中心点坐标和地图级别
+    var pStart = new BMap.Point(116.17,39.69);
+    var pEnd = new BMap.Point(116.67,40.19);
+    var rectangles=new Array([2500]);
+    for ( var i = 0; i <2500; i++)
+        rectangles[i]=new Array([2500]);
+    var t1=new Array();
+    var t2=new Array();
+    var t3=new Array();
+    var t4=new Array();
+
+    //在这里黏贴print_res的结果
+
+
+    for (var i =0; i<ccount2; i++)
+    {
+        var x1=t2[i]%50;
+        var y1=t2[i]/50;
+        rectangles[x1][y1] = new BMap.Polygon([
+            new BMap.Point(pStart.lng+0.01*x1,pStart.lat+0.01*y1),
+            new BMap.Point(pStart.lng+0.01*x1+0.01,pStart.lat+0.01*y1),
+            new BMap.Point(pStart.lng+0.01*x1+0.01,pStart.lat+0.01*y1+0.01),
+            new BMap.Point(pStart.lng+0.01*x1,pStart.lat+0.01*y1+0.01)
+        ], {strokeColor:"red", strokeWeight:0.1,  strokeOpacity:0.9});  //创建矩形
+        rectangles[x1][y1].setFillColor("red");
+        map.addOverlay(rectangles[x1][y1]);
+    }
+    for (var i =0; i<ccount1; i++)
+    {
+        var x1=t1[i]%50;
+        var y1=t1[i]/50;
+        rectangles[x1][y1] = new BMap.Polygon([
+            new BMap.Point(pStart.lng+0.01*x1,pStart.lat+0.01*y1),
+            new BMap.Point(pStart.lng+0.01*x1+0.01,pStart.lat+0.01*y1),
+            new BMap.Point(pStart.lng+0.01*x1+0.01,pStart.lat+0.01*y1+0.01),
+            new BMap.Point(pStart.lng+0.01*x1,pStart.lat+0.01*y1+0.01)
+        ], {strokeColor:"blue", strokeWeight:0.1, strokeOpacity:0.9});  //创建矩形
+        rectangles[x1][y1].setFillColor("blue");
+        map.addOverlay(rectangles[x1][y1]);
+    }
+    for (var i =0; i<ccount3; i++)
+    {
+        console.log("greeeeeeeeeeeeeeeeeeee")
+        var x1=t3[i]%50;
+        var y1=t3[i]/50;
+        rectangles[x1][y1] = new BMap.Polygon([
+            new BMap.Point(pStart.lng+0.01*x1,pStart.lat+0.01*y1),
+            new BMap.Point(pStart.lng+0.01*x1+0.01,pStart.lat+0.01*y1),
+            new BMap.Point(pStart.lng+0.01*x1+0.01,pStart.lat+0.01*y1+0.01),
+            new BMap.Point(pStart.lng+0.01*x1,pStart.lat+0.01*y1+0.01)
+        ], {strokeColor:"green", strokeWeight:0.1, strokeOpacity:0.9});  //创建矩形
+        rectangles[x1][y1].setFillColor("green");
+        map.addOverlay(rectangles[x1][y1]);
+    }
+    for (var i =0; i<ccount4; i++)
+    {
+        console.log("yellowwwwwwwwwwww")
+        var x1=t4[i]%50;
+        var y1=t4[i]/50;
+        rectangles[x1][y1] = new BMap.Polygon([
+            new BMap.Point(pStart.lng+0.01*x1,pStart.lat+0.01*y1),
+            new BMap.Point(pStart.lng+0.01*x1+0.01,pStart.lat+0.01*y1),
+            new BMap.Point(pStart.lng+0.01*x1+0.01,pStart.lat+0.01*y1+0.01),
+            new BMap.Point(pStart.lng+0.01*x1,pStart.lat+0.01*y1+0.01)
+        ], {strokeColor:"yellow", strokeWeight:0.1, strokeOpacity:0.9});  //创建矩形
+        rectangles[x1][y1].setFillColor("yellow");
+        map.addOverlay(rectangles[x1][y1]);
+    }
+</script>
+</body>
+</html>
