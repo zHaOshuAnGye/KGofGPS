@@ -1,0 +1,9 @@
+Vt: Vt-data_using_method_in_paper
+Vs: Vs-Vs_all_normalized
+Vts: Vts-data_using_method_in_paper
+Vts_select: 筛选过特征（保留原B、F、J列特征）的Vts-data_using_method_in_paper
+skipgram_KGofGPS：补充未访问的点特征值为0
+skipgram_KGofGPS_tra：Skip-skipgram_KGofGPS_tra.txt
+VtVs：Vt-data_using_method_in_paper; Vs-Vs_all_normalized
+VtVsVts: Vt-data_using_method_in_paper; Vs-Vs_all_normalized; Vts-data_using_method_in_paper
+VtVsSkip: Vt-data_using_method_in_paper; Vs-Vs_all_normalized; Skip-skipgram_KGofGPS_tra
